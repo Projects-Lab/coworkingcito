@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registro</title>
+    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    
+    <!-- Boxicons -->    
+    <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+
+
+</head>
+<body>
+
+    <div class="register-form">
+        <h1>Registrarse</h1>
+        <form action="register" method="POST">
+            <input type="text" name ="name" placeholder="Nombre Completo "required>
+
+            <input type="text" name ="user" placeholder="Usuario "required >
+            
+            <input type="password" name = "pass" placeholder="Contraseña " required>
+
+
+            <label for="Rol" > Cargo </label>
+            <select name="rol" id="rol" class="select-css">
+                <option value="admin" >Administrador</option>
+                <option value="Recepcion" selected> Recepcionista</option>
+            </select>
+
+            <div style= "display: inline;">
+
+            <input type="submit" class = "btn-save" value="Save">
+            <a href="/" class="btn-cancel"> Cancelar</a>
+            </div>
+        </form>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <% if(typeof alert != "undefined"){ %>
+        <script>
+            Swal.fire({
+                title: '<%= alertTitle %>',
+                text: '<%= alertMessage%>',
+                icon:'<%= alertIcon %>',
+                showConfirmButton: '<%= showConfirmButton %>',
+                timer: '<%= timer%>'          
+            }).then(()=>{
+                window.location='/ <%= ruta%>'
+            })
+        </script>
+        <% } %>
+
+</body>
+</html>

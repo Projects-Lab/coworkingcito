@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    
+    <!-- Boxicons     
+    <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+    -->
+    <title>CRUD Clientes</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="">COWORKING</a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Cerrar Sesion</a>
+              </li>
+            </ul>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div  class="container">    
+        <a href="/create" class="btn btn-success btn-block"><i class='bx bx-plus bx-mt-20' ></i>Nuevo Cliente</a>    
+      <table class="table table-bordered table-striped text-center mt-5">
+      </div>
+        <thead>
+          <tr class="bg-primary text-white">
+            <th scope="col">ID</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>            
+            <th scope="col">Direccion</th>     
+            <th scope="col">E-mail</th>            
+            <th scope="col">Celular</th>  
+            <th scope="col">Ciudad</th>            
+            <th scope="col">Departamento</th>
+            <th scope="col"></th>
+
+          </tr>
+        </thead>
+        <tbody>
+            <% results.forEach((user)=>{ %>
+              <tr>  
+                  <td><%= user.id %></td>  
+                  <td><%= user.nombres %></td>
+                  <td><%= user.apellidos %></td>
+                  <td><%= user.direccion %></td>
+                  <td><%= user.email %></td>
+                  <td><%= user.celular %></td>
+                  <td><%= user.ciudad %></td>
+                  <td><%= user.departamento %></td>
+                  <td>
+                    <a href="/edit/<%= user.id %>" class="btn btn-outline-secondary"><i class='bx bxs-edit-alt'></i>Editar</a>
+                    <a href="/delete/<%= user.id %>" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'>Eliminar</i></a>                   
+                  </td>
+              </tr>                                   
+           <% }) %>
+          </tbody>
+        </table>
+    </div> 
+    <div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>

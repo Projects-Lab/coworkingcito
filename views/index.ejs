@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+<link rel="stylesheet" href="resources/css/style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    
+    <!-- Boxicons -->    
+    <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="">Modulo Clientes</a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+            </form>
+          </div>
+        </div>
+      </nav>
+  
+    <div class="login-form">
+
+        <% if (login) { %> 
+            <div>
+                <h3>Usuario conectado: <strong><%= name %></strong></h3>  
+            </div>               
+         
+            
+            
+
+            <a href="logout" class="a-logout">Cerrar Sesion</a>
+            <a href="index2" class="a-login">Ir a CRUD</a>
+        <%} else { %>
+            <div class="center">
+                <h1><strong><%= name %></strong></h1>   
+                <a href="login" class="a-login">Iniciar Sesion</a>
+            </div>
+
+
+
+        <% } %>
+      </div>
+
+</body>
+
+</html>

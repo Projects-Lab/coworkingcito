@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>CRUD</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">COWORKING</a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/index2">Clientes</a>
+                  </li>
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Cerrar Sesion</a>
+              </li>
+
+            </ul>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+    <% if (user) { %>
+        <div class="container mt-4">
+         <div class="card border-secondary mt-4">
+          <div class="card-header">EDITAR REGISTRO</div>
+            <div class="card-body">
+                <form action="/update" method="POST">
+
+                        <div class="mb-3">
+                        <label for="user" class="form-label" hidden>ID</label>
+                        <input type="text" class="form-control" id="id" name="id" tabindex="1" 
+                           value="<%= user.id  %>" hidden>
+                        </div>
+
+                        <div class="mb-3">
+                        <label for="user" class="form-label">NOMBRES</label>
+                        <input type="text" class="form-control" id="nombres" name="nombres" tabindex="2"
+                            value="<%= user.nombres  %>">
+                         </div>
+
+                        <div class="mb-3">
+                        <label for="user" class="form-label">APELLIDOS</label>
+                        <input type="text" class="form-control" id="apellidos" name="apellidos" tabindex="3"
+                            value="<%= user.apellidos  %>">
+                        </div>
+                        <div class="mb-3">
+                        <label for="user" class="form-label">DIRECCION</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion" tabindex="4"
+                            value="<%= user.direccion  %>">
+                        </div>
+                        <div class="mb-3">
+                        <label for="user" class="form-label">E-MAIL</label>
+                        <input type="text" class="form-control" id="email" name="email" tabindex="5"
+                            value="<%= user.email  %>">
+                        </div>
+                        <div class="mb-3">
+                        <label for="user" class="form-label">CELULAR</label>
+                        <input type="text" class="form-control" id="celular" name="celular" tabindex="6"
+                            value="<%= user.celular  %>">
+                        </div>
+
+
+
+                        <div class="mb-3">
+                        <h3> <%= user.ciudad %> </h3>
+
+                        <label for="user" class="form-label">CIUDAD</label>
+                        <select id="ciudad" name="ciudad" class="form-select" tabindex="7">
+                            <option <%= user.ciudad=='MONTERIA' ? "selected" : '' %> value="MONTERIA">MONTERIA
+                            </option>
+                            <option <%= user.ciudad=='CERETE' ? "selected" : '' %> value="CERETE">CERETE</option>
+                            <option <%= user.ciudad=='MEDELLIN' ? "selected" : '' %> value="MEDELLIN">MEDELLIN
+                            </option>
+                            <option <%= user.ciudad=='CALI' ? "selected" : '' %> value="CALI">CALI</option>
+                            <option <%= user.ciudad=='BOGOTA' ? "selected" : '' %> value="BOGOTA">BOGOTA</option>
+                        </select>
+                        </div>
+
+                        <div class="mb-3">
+                        <h3><%= user.departamento %></h3>
+                        <label for="user" class="form-label">DEPARTAMENTO</label>
+                        <select id="departamento" name="departamento" class="form-select" tabindex="8">
+                            <option <%= user.departamento=='CORDOBA' ? "selected" : '' %> value="CORDOBA">CORDOBA
+                            </option>
+                            <option <%= user.departamento=='ANTIOQUIA' ? "selected" : '' %> value="ANTIOQUIA">ANTIOQUIA
+                            </option>
+                            <option <%= user.departamento=='CAUCA' ? "selected" : '' %> value="CAUCA">CAUCA</option>
+                            <option <%= user.departamento=='CUNDINAMARCA' ? "selected" : '' %> value="CUNDINAMARCA">
+                                CUNDINAMARCA</option>
+                            <option <%= user.departamento=='NARIÑO' ? "selected" : '' %> value="NARIÑO">NARIÑO
+                            </option>
+                        </select>
+                        </div>
+
+                    <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
+                        <a href="/index2" class="btn btn-secondary">Cancelar</a>
+                </form>
+            </div>
+          </div>
+         </div>
+        </div>
+    <% } %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
